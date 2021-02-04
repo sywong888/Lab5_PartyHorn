@@ -6,12 +6,10 @@ function changeSlider() {
 }
 
 
-var button = document.getElementById('honk-btn'); // 
 
-button.addEventListener('click', playSound); 
-function playSound(){
+document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
     var audio = new Audio("./assets/media/audio/air-horn.mp3");
     audio.play();
-}
+  });
 // TODO
