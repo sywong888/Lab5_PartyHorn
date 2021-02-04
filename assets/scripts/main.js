@@ -4,12 +4,15 @@ function changeSlider() {
     var x = document.getElementById("volume-number").value;
     document.getElementById("volume-slider").innerHTML = x;
 }
-var volume = 0;
-document.getElementById("volume-number").addEventListener("click", function(event) {
-    event.preventDefault();
-    volume = document.getElementById("volume-number").value;
-    alert(volume);
-});
+var volume = 100;
+
+
+document.getElementById("volume-number").addEventListener("change", setVolume());
+
+function setVolume() {
+  volume = document.getElementById("volume-number").value;
+  document.getElementById("volume-slider").innerHTML = x;
+}
 
 
 
@@ -31,16 +34,3 @@ document.getElementById("honk-btn").addEventListener("click", function(event) {
     audio.play();
   });
 
-// var form = document.querySelector("form");
-// var log = document.querySelector("#log");
-
-// form.addEventListener("submit", function(event) {
-//   var data = new FormData(form);
-//   var output = "";
-//   for (const entry of data) {
-//     output = output + entry[0] + "=" + entry[1] + "\r";
-//   };
-//   log.innerText = output;
-//   event.preventDefault();
-// }, false);
-// TODO
