@@ -9,22 +9,22 @@ function changeSlider() {
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
-    var sound = selectSound();
+    var sound = (function() {
+        alert("heyyo")
+        const buttons = document.querySelectorAll('input[name="radio-sound"]');
+        let name = "";
+        for (const b of buttons) {
+            if (rb.checked) {
+                name = b.id;
+                break;
+            }
+        }
+        return name;
+    })();
     var filename = "./assets/media/audio/" + sound.substr(6) + ".mp3";
     var audio = new Audio(filename);
     audio.play();
   });
-
-function selectSound() {
-    const buttons = document.querySelectorAll('input[name="radio-sound"]');
-    let name = "";
-    for (const b of buttons) {
-        if (rb.checked) {
-            name = b.id;
-        }
-    }
-    return name;
-}
 
 // var form = document.querySelector("form");
 // var log = document.querySelector("#log");
