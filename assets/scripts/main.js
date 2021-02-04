@@ -9,8 +9,9 @@ function changeSlider() {
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
+    alert("start");
     var sound = (function() {
-        alert("heyyo")
+        alert("heyyo");
         const buttons = document.querySelectorAll('input[name="radio-sound"]');
         let name = "";
         for (const b of buttons) {
