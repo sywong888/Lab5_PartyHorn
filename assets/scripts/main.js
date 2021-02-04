@@ -15,7 +15,7 @@ document.getElementById("honk-btn").addEventListener("click", function(event) {
         const buttons = document.querySelectorAll('input[name="radio-sound"]');
         let name = "";
         for (const b of buttons) {
-            if (rb.checked) {
+            if (b.checked) {
                 name = b.id;
                 break;
             }
