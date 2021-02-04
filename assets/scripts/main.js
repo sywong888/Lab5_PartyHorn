@@ -4,14 +4,18 @@ function changeSlider() {
     var x = document.getElementById("volume-number").value;
     document.getElementById("volume-slider").innerHTML = x;
 }
+var volume = 0;
+document.getElementById("volume-number").addEventListener("click", function(event) {
+    event.preventDefault();
+    volume = document.getElementById("volume-number").value;
+    alert(volume);
+});
 
 
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
-    alert("start");
     var sound = (function() {
-        alert("heyyo");
         const buttons = document.querySelectorAll('input[name="radio-sound"]');
         let name = "";
         for (const b of buttons) {
