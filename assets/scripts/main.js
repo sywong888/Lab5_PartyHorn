@@ -17,7 +17,7 @@
 const input = document.querySelector('input');
 const log = document.getElementById('volume-number');
 
-input.addEventListener('input', updateValue);
+input.addEventListener('input', updateSlider);
 
 function updateSlider(e) {
   document.getElementById('volume-slider').value = e.target.value;
