@@ -11,7 +11,7 @@ document.getElementById("volume-number").addEventListener("change", setVolume())
 
 function setVolume() {
   volume = document.getElementById("volume-number").value;
-  document.getElementById("volume-slider").innerHTML = x;
+  document.getElementById("volume-slider").innerHTML = volume;
 }
 
 
