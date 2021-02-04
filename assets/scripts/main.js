@@ -1,17 +1,26 @@
 // main.js
 
-function changeSlider() {
-    var x = document.getElementById("volume-number").value;
-    document.getElementById("volume-slider").innerHTML = x;
-}
-var volume = 100;
+// function changeSlider() {
+//     var x = document.getElementById("volume-number").value;
+//     document.getElementById("volume-slider").innerHTML = x;
+// }
+// var volume = 100;
 
 
-document.getElementById("volume-number").addEventListener("change", setVolume());
+// document.getElementById("volume-number").addEventListener("change", setVolume());
 
-function setVolume() {
-  volume = document.getElementById("volume-number").value;
-  document.getElementById("volume-slider").innerHTML = volume;
+// function setVolume() {
+//   volume = document.getElementById("volume-number").value;
+//   document.getElementById("volume-slider").innerHTML = volume;
+// }
+
+const input = document.querySelector('input');
+const log = document.getElementById('volume-number');
+
+input.addEventListener('input', updateValue);
+
+function updateSlider(e) {
+  document.getElementById('volume-slider').value = e.target.value;
 }
 
 
