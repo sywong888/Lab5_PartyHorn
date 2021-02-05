@@ -7,7 +7,7 @@ const number = document.getElementById('volume-number');
 input.addEventListener('input', updateSlider);
 
 const slider = document.getElementById('volume-slider');
-input.addEventListener('onchange', updateNumber);
+slider.addEventListener('change', updateNumber);
 
 const level = document.getElementById('volume-image');
 const horn = document.getElementById('sound-image');
@@ -58,17 +58,6 @@ function changeHorn(e) {
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
-    // var sound = (function() {
-    //     const buttons = document.querySelectorAll('input[name="radio-sound"]');
-    //     let name = "";
-    //     for (const b of buttons) {
-    //         if (b.checked) {
-    //             name = b.id;
-    //             break;
-    //         }
-    //     }
-    //     return name;
-    // })();
     var filename = "./assets/media/audio/" + hornType + ".mp3";
     var audio = new Audio(filename);
     audio.volume = volume;
