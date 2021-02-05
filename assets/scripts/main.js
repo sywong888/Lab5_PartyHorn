@@ -9,7 +9,7 @@ input.addEventListener('input', updateSlider);
 const slider = document.getElementById('volume-slider');
 input.addEventListener('onchange', updateNumber);
 
-const volume = document.getElementById('volume-image');
+const level = document.getElementById('volume-image');
 const horn = document.getElementById('sound-image');
 
 function updateSlider(e) {
@@ -35,7 +35,7 @@ function updateImage() {
     } else {
         imageName = "volume-level-0.svg";
     }
-    volume.src = "./assets/media/icons/" + imageName;
+    level.src = "./assets/media/icons/" + imageName;
 }
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
