@@ -7,10 +7,10 @@ const number = document.getElementById('volume-number');
 input.addEventListener('input', updateSlider);
 
 const slider = document.getElementById('volume-slider');
-input.addEventListener('change', updateNumber);
+input.addEventListener('onchange', updateNumber);
 
-const image = document.getElementById('sound-image');
-
+const volume = document.getElementById('volume-image');
+const horn = document.getElementById('sound-image');
 
 function updateSlider(e) {
   slider.value = e.target.value;
@@ -35,7 +35,7 @@ function updateImage() {
     } else {
         imageName = "volume-level-0.svg";
     }
-    image.src = "./assets/media/icons/" + imageName;
+    volume.src = "./assets/media/icons/" + imageName;
 }
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
@@ -51,6 +51,7 @@ document.getElementById("honk-btn").addEventListener("click", function(event) {
         }
         return name;
     })();
+    horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
     var filename = "./assets/media/audio/" + sound.substr(6) + ".mp3";
     var audio = new Audio(filename);
     audio.volume = volume;
