@@ -38,6 +38,22 @@ function updateImage() {
     level.src = "./assets/media/icons/" + imageName;
 }
 
+//var form = document.querySelector("form");
+var form = document.querySelector("audio-selection");
+
+form.addEventListener("click", hey);
+function hey(e) {
+    const buttons = document.querySelectorAll('input[name="radio-sound"]');
+        let name = "";
+        for (const b of buttons) {
+            if (b.checked) {
+                name = b.id;
+                break;
+            }
+        }
+        horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
+    }
+
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
     var sound = (function() {
