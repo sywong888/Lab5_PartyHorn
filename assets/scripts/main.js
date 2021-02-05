@@ -13,13 +13,18 @@ input.addEventListener('change', updateNumber);
 function updateSlider(e) {
   slider.value = e.target.value;
   volume = e.target.value;
+  updateImage();
+
 }
 function updateNumber(e) {
-  number = e.target.value;
+  number.value = e.target.value;
   volume = e.target.value;
+  updateImage()
 }
 
+function updateImage() {
 
+}
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
