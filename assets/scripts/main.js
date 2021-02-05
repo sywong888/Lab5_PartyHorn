@@ -15,12 +15,22 @@ const horn = document.getElementById('sound-image');
 function updateSlider(e) {
   slider.value = e.target.value;
   volume = e.target.value / 100;
+  if (volume == 0) {
+    document.getElementById("honk-btn").disabled = true;
+  } else {
+    document.getElementById("honk-btn").disabled = false;
+  }
   updateImage();
 
 }
 function updateNumber(e) {
   number.value = e.target.value;
   volume = e.target.value / 100;
+  if (volume == 0) {
+    document.getElementById("honk-btn").disabled = true;
+  } else {
+    document.getElementById("honk-btn").disabled = false;
+  }
   updateImage()
 }
 
