@@ -38,53 +38,38 @@ function updateImage() {
     level.src = "./assets/media/icons/" + imageName;
 }
 
-//var form = document.querySelector("form");
-// var form = document.querySelector("audio-selection");
-
-// form.addEventListener("click", hey);
-// function hey(e) {
-//     const buttons = document.querySelectorAll('input[name="radio-sound"]');
-//         let name = "";
-//         for (const b of buttons) {
-//             if (b.checked) {
-//                 name = b.id;
-//                 break;
-//             }
-//         }
-//         horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
-//     }
-var r = document.querySelectorAll('input[name="radio-sound"]');
-//r.forEach(radio => radio.addEventListener('change', () => alert(radio.value)));
-r.forEach(radio => radio.addEventListener('change', hey));
-function hey(e) {
-        let name = "";
-        for (const b of r) {
-            if (b.checked) {
-                name = b.id;
+var hornType = "";
+var buttons = document.querySelectorAll('input[name="radio-sound"]');
+buttons.forEach(radio => radio.addEventListener('change', changeHorn));
+function changeHorn(e) {
+        for (const button of buttons) {
+            if (button.checked) {
+                hornType = button.id;
+                hornType = hornType.substr(6)
                 break;
             }
         }
-        horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
+        if (hornType == "car-horn") {
+            horn.src = "./assets/media/images/car.svg";
+        } else {
+            horn.src = "./assets/media/images/" + hornType + ".svg";
+        }
     }
-
-// var radios = document.querySelectorAll('input[type=radio][name="contact"]');
-// radios.forEach(radio => radio.addEventListener('change', () => alert(radio.value)));
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
-    var sound = (function() {
-        const buttons = document.querySelectorAll('input[name="radio-sound"]');
-        let name = "";
-        for (const b of buttons) {
-            if (b.checked) {
-                name = b.id;
-                break;
-            }
-        }
-        return name;
-    })();
-    horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
-    var filename = "./assets/media/audio/" + sound.substr(6) + ".mp3";
+    // var sound = (function() {
+    //     const buttons = document.querySelectorAll('input[name="radio-sound"]');
+    //     let name = "";
+    //     for (const b of buttons) {
+    //         if (b.checked) {
+    //             name = b.id;
+    //             break;
+    //         }
+    //     }
+    //     return name;
+    // })();
+    var filename = "./assets/media/audio/" + hornType + ".mp3";
     var audio = new Audio(filename);
     audio.volume = volume;
     audio.play();
