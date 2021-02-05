@@ -39,13 +39,26 @@ function updateImage() {
 }
 
 //var form = document.querySelector("form");
-var form = document.querySelector("audio-selection");
+// var form = document.querySelector("audio-selection");
 
-form.addEventListener("click", hey);
+// form.addEventListener("click", hey);
+// function hey(e) {
+//     const buttons = document.querySelectorAll('input[name="radio-sound"]');
+//         let name = "";
+//         for (const b of buttons) {
+//             if (b.checked) {
+//                 name = b.id;
+//                 break;
+//             }
+//         }
+//         horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
+//     }
+var r = document.querySelectorAll('input[name="radio-sound"]');
+//r.forEach(radio => radio.addEventListener('change', () => alert(radio.value)));
+r.forEach(radio => radio.addEventListener('change', hey));
 function hey(e) {
-    const buttons = document.querySelectorAll('input[name="radio-sound"]');
         let name = "";
-        for (const b of buttons) {
+        for (const b of r) {
             if (b.checked) {
                 name = b.id;
                 break;
@@ -53,6 +66,9 @@ function hey(e) {
         }
         horn.src = "./assets/media/images/" + sound.substr(6) + ".svg";
     }
+
+// var radios = document.querySelectorAll('input[type=radio][name="contact"]');
+// radios.forEach(radio => radio.addEventListener('change', () => alert(radio.value)));
 
 document.getElementById("honk-btn").addEventListener("click", function(event) {
     event.preventDefault();
