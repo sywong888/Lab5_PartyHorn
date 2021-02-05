@@ -1,26 +1,22 @@
 // main.js
 
-// function changeSlider() {
-//     var x = document.getElementById("volume-number").value;
-//     document.getElementById("volume-slider").innerHTML = x;
-// }
-// var volume = 100;
-
-
-// document.getElementById("volume-number").addEventListener("change", setVolume());
-
-// function setVolume() {
-//   volume = document.getElementById("volume-number").value;
-//   document.getElementById("volume-slider").innerHTML = volume;
-// }
-
+var volume = 100;
 const input = document.querySelector('input');
-const log = document.getElementById('volume-number');
 
+const number = document.getElementById('volume-number');
 input.addEventListener('input', updateSlider);
 
+const slider = document.getElementById('volume-slider');
+input.addEventListener('change', updateNumber);
+
+
 function updateSlider(e) {
-  document.getElementById('volume-slider').value = e.target.value;
+  slider.value = e.target.value;
+  volume = e.target.value;
+}
+function updateNumber(e) {
+  number = e.target.value;
+  volume = e.target.value;
 }
 
 
@@ -40,6 +36,7 @@ document.getElementById("honk-btn").addEventListener("click", function(event) {
     })();
     var filename = "./assets/media/audio/" + sound.substr(6) + ".mp3";
     var audio = new Audio(filename);
+    audio.volume = volume;
     audio.play();
   });
 
