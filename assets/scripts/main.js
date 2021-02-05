@@ -28,9 +28,9 @@ function updateImage() {
     var imageName = "";
     if (volume >= .67 && volume <= 1) {
         imageName = "volume-level-3.svg";
-    } else if (volume >= 34 && volume <= 66) {
+    } else if (volume >= .34 && volume <= .66) {
         imageName = "volume-level-2.svg";
-    } else if (volume >= 1 && volume <= 33) {
+    } else if (volume >= .01 && volume <= .33) {
         imageName = "volume-level-1.svg";
     } else {
         imageName = "volume-level-0.svg";
